@@ -361,6 +361,35 @@
       display: flex
     }
 
+    /* Language Switcher */
+    .lang-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 50px;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      border: 1.5px solid rgba(255,255,255,.30);
+      background: rgba(255,255,255,.07);
+      color: rgba(255,255,255,.85);
+      cursor: pointer;
+      transition: var(--t);
+      margin-left: 10px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .lang-btn:hover {
+      background: rgba(255,255,255,.16);
+      border-color: rgba(255,255,255,.55);
+      color: var(--white);
+    }
+    .lang-btn__flag { font-size: 1rem; line-height: 1; }
+    @media(max-width:768px){
+      .lang-btn { margin-left:6px; padding:6px 10px; font-size:.72rem; }
+    }
+
     /* Slogan ticker */
     .slogan-bar {
       overflow: hidden;
@@ -1792,25 +1821,29 @@
         <div class="nav__logo-text"><strong>Proud Shipping S.A</strong><span>We Make It Happen</span></div>
       </a>
       <div class="nav__links" role="menubar">
-        <a href="#inicio" class="nav__link active" role="menuitem">Home</a>
-        <a href="#nosotros" class="nav__link" role="menuitem">Nosotros</a>
-        <a href="#servicios" class="nav__link" role="menuitem">Servicios</a>
-        <a href="#cobertura" class="nav__link" role="menuitem">Cobertura</a>
-        <a href="#equipo" class="nav__link" role="menuitem">Equipo</a>
+        <a href="#inicio" class="nav__link active" role="menuitem" data-i18n="nav.home">Home</a>
+        <a href="#nosotros" class="nav__link" role="menuitem" data-i18n="nav.about">Nosotros</a>
+        <a href="#servicios" class="nav__link" role="menuitem" data-i18n="nav.services">Servicios</a>
+        <a href="#cobertura" class="nav__link" role="menuitem" data-i18n="nav.coverage">Cobertura</a>
+        <a href="#equipo" class="nav__link" role="menuitem" data-i18n="nav.team">Equipo</a>
       </div>
-      <a href="#contacto" class="btn btn-primary nav__cta">Solicitar cotización</a>
+      <a href="#contacto" class="btn btn-primary nav__cta" data-i18n="nav.cta">Solicitar cotización</a>
       <button class="nav__burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false"
         aria-controls="mobileNav">
         <span></span><span></span><span></span>
       </button>
+      <button class="lang-btn" id="langBtn" aria-label="Cambiar idioma" title="Switch language">
+        
+        <span id="langLabel">EN</span>
+      </button>
     </div>
     <div class="nav__mobile" id="mobileNav" role="menu" aria-hidden="true">
-      <a href="#inicio" role="menuitem">Home</a>
-      <a href="#nosotros" role="menuitem">Nosotros</a>
-      <a href="#servicios" role="menuitem">Servicios</a>
-      <a href="#cobertura" role="menuitem">Cobertura</a>
-      <a href="#equipo" role="menuitem">Equipo</a>
-      <a href="#contacto" class="btn btn-primary" role="menuitem">Solicitar cotización</a>
+      <a href="#inicio" role="menuitem" data-i18n="nav.home">Home</a>
+      <a href="#nosotros" role="menuitem" data-i18n="nav.about">Nosotros</a>
+      <a href="#servicios" role="menuitem" data-i18n="nav.services">Servicios</a>
+      <a href="#cobertura" role="menuitem" data-i18n="nav.coverage">Cobertura</a>
+      <a href="#equipo" role="menuitem" data-i18n="nav.team">Equipo</a>
+      <a href="#contacto" class="btn btn-primary" role="menuitem" data-i18n="nav.cta">Solicitar cotización</a>
     </div>
                   <!-- =====================================================
      SLOGAN TICKER
@@ -1845,9 +1878,9 @@
           </div>
           <div class="hero__eyebrow">
             <span class="hero__dot" aria-hidden="true"></span>
-            Operaciones activas en +50 países
+            <span data-i18n="hero.eyebrow">Operaciones activas en +50 países</span>
           </div>
-          <p class="hero__sub">Conectamos tu carga con el mundo con eficiencia, confiabilidad y un equipo dedicado a
+          <p class="hero__sub" data-i18n="hero.sub">Conectamos tu carga con el mundo con eficiencia, confiabilidad y un equipo dedicado a
             cada operación. <strong style="color:rgba(255,255,255,.85)">We Make It Happen.</strong></p>
           <div class="hero__actions">
             <a href="#contacto" class="btn btn-primary">
@@ -1856,16 +1889,16 @@
                 <path
                   d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 018.63 18.85 19.5 19.5 0 014.69 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.61 1.21h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.96a16 16 0 006.29 6.29l.94-.94a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
               </svg>
-              Solicitar cotización
+              <span data-i18n="nav.cta">Solicitar cotización</span>
             </a>
-            <a href="#servicios" class="btn btn-outline">Explorar servicios →</a>
+            <a href="#servicios" class="btn btn-outline" data-i18n="hero.explore">Explorar servicios →</a>
           </div>
         </div>
       </div>
       <div class="hero__floating" aria-hidden="true">
-        <div class="hero__stat-card"><strong>+120</strong><span>Agentes globales</span></div>
-        <div class="hero__stat-card"><strong>+50</strong><span>Países activos</span></div>
-        <div class="hero__stat-card"><strong>+250</strong><span>Puertos conectados</span></div>
+        <div class="hero__stat-card"><strong>+120</strong><span data-i18n="hero.stat1">Agentes globales</span></div>
+        <div class="hero__stat-card"><strong>+50</strong><span data-i18n="hero.stat2">Países activos</span></div>
+        <div class="hero__stat-card"><strong>+250</strong><span data-i18n="hero.stat3">Puertos conectados</span></div>
       </div>
       
       <div class="hero__scroll" aria-hidden="true">
@@ -1889,31 +1922,31 @@
           <div class="about__badge"><strong>+15</strong><span>Años de experiencia</span></div>
         </div>
         <div class="sr sr-d1">
-          <span class="section-label">Quiénes somos</span>
-          <h2 class="section-title">Una empresa global con raíces en Latinoamérica</h2>
-          <p class="section-sub" style="margin-bottom:20px">Somos una empresa de soluciones logísticas con base en
+          <span class="section-label" data-i18n="about.label">Quiénes somos</span>
+          <h2 class="section-title" data-i18n="about.title">Una empresa global con raíces en Latinoamérica</h2>
+          <p class="section-sub" style="margin-bottom:20px" data-i18n="about.p1">Somos una empresa de soluciones logísticas con base en
             Buenos Aires, Argentina, y headquarters en Ciudad de México. Parte del Proud Shipping Group, una compañía en
             crecimiento y expansión constante a nivel mundial.</p>
-          <p style="font-size:.9rem;color:var(--gray-600);margin-bottom:32px">Nuestro servicio logístico integral
+          <p style="font-size:.9rem;color:var(--gray-600);margin-bottom:32px" data-i18n="about.p2">Nuestro servicio logístico integral
             gestiona eficientemente todos los procesos de operatividad y comercialidad en materia de exportación e
             importación, adaptándonos a las necesidades de cada cliente. Nos especializamos en logística estratégica y
             carga multimodal, además de flete aéreo, marítimo y terrestre.</p>
           <div class="about__goals">
             <div class="about__goal">
               <div class="about__goal-icon">⚡</div>
-              <div><strong>Optimizar recursos</strong><span>Eficiencia en cada operación</span></div>
+              <div><strong data-i18n="about.goal1t">Optimizar recursos</strong><span data-i18n="about.goal1s">Eficiencia en cada operación</span></div>
             </div>
             <div class="about__goal">
               <div class="about__goal-icon">💰</div>
-              <div><strong>Reducir costos</strong><span>Soluciones competitivas</span></div>
+              <div><strong data-i18n="about.goal2t">Reducir costos</strong><span data-i18n="about.goal2s">Soluciones competitivas</span></div>
             </div>
             <div class="about__goal">
               <div class="about__goal-icon">⚡</div>
-              <div><strong>Respuesta rápida</strong><span>Atención en menos de 2hs</span></div>
+              <div><strong data-i18n="about.goal3t">Respuesta rápida</strong><span data-i18n="about.goal3s">Atención en menos de 2hs</span></div>
             </div>
             <div class="about__goal">
               <div class="about__goal-icon">🏆</div>
-              <div><strong>Superar expectativas</strong><span>Nuestro compromiso real</span></div>
+              <div><strong data-i18n="about.goal4t">Superar expectativas</strong><span data-i18n="about.goal4s">Nuestro compromiso real</span></div>
             </div>
           </div>
         </div>
@@ -1926,30 +1959,30 @@
      ===================================================== -->
   <section class="mvv" aria-label="Misión, Visión y Valores">
     <div class="container">
-      <div class="text-center sr"><span class="section-label">Nuestros pilares</span>
-        <h2 class="section-title">Misión, Visión y Valores</h2>
+      <div class="text-center sr"><span class="section-label" data-i18n="mvv.label">Nuestros pilares</span>
+        <h2 class="section-title" data-i18n="mvv.title">Misión, Visión y Valores</h2>
       </div>
       <div class="mvv__grid">
         <div class="mvv__card sr">
           <div class="mvv__icon">🎯</div>
-          <h3>Misión</h3>
-          <p>Brindar soluciones logísticas integrales, eficientes y personalizadas que conecten a nuestros clientes con
+          <h3 data-i18n="mvv.m.title">Misión</h3>
+          <p data-i18n="mvv.m.text">Brindar soluciones logísticas integrales, eficientes y personalizadas que conecten a nuestros clientes con
             el mundo, optimizando tiempos, recursos y costos operativos sin comprometer la calidad del servicio.</p>
         </div>
         <div class="mvv__card sr sr-d1">
           <div class="mvv__icon">🌍</div>
-          <h3>Visión</h3>
-          <p>Ser un operador logístico global de referencia en Latinoamérica, reconocido por nuestra confiabilidad,
+          <h3 data-i18n="mvv.v.title">Visión</h3>
+          <p data-i18n="mvv.v.text">Ser un operador logístico global de referencia en Latinoamérica, reconocido por nuestra confiabilidad,
             tecnología aplicada y la excelencia en el servicio al cliente a nivel internacional.</p>
         </div>
         <div class="mvv__card sr sr-d2">
           <div class="mvv__icon">⭐</div>
-          <h3>Valores</h3>
+          <h3 data-i18n="mvv.val.title">Valores</h3>
           <ul>
-            <li>Compromiso con cada operación</li>
-            <li>Integridad en cada decisión</li>
-            <li>Innovación constante</li>
-            <li>Enfoque total en el cliente</li>
+            <li data-i18n="mvv.val.1">Compromiso con cada operación</li>
+            <li data-i18n="mvv.val.2">Integridad en cada decisión</li>
+            <li data-i18n="mvv.val.3">Innovación constante</li>
+            <li data-i18n="mvv.val.4">Enfoque total en el cliente</li>
           </ul>
         </div>
       </div>
@@ -1962,9 +1995,9 @@
   <section class="services" id="servicios" aria-label="Nuestros servicios">
     <div class="container">
       <div class="services__header sr">
-        <span class="section-label">Lo que ofrecemos</span>
-        <h2 class="section-title">Soluciones logísticas completas</h2>
-        <p class="section-sub">Cubrimos cada modalidad de transporte con procesos optimizados y seguimiento end-to-end
+        <span class="section-label" data-i18n="svc.label">Lo que ofrecemos</span>
+        <h2 class="section-title" data-i18n="svc.title">Soluciones logísticas completas</h2>
+        <p class="section-sub" data-i18n="svc.sub">Cubrimos cada modalidad de transporte con procesos optimizados y seguimiento end-to-end
           para tu carga.</p>
       </div>
       <div class="services__grid">
@@ -1979,12 +2012,12 @@
           <div class="svc-card__body">
             <h3>Sea Freight</h3>
             <ul class="svc-card__list">
-              <li>FCL – Contenedor completo</li>
-              <li>LCL – Carga consolidada</li>
+              <li data-i18n="sea.li1">FCL – Contenedor completo</li>
+              <li data-i18n="sea.li2">LCL – Carga consolidada</li>
               <li>Break Bulk / Roll On-Off</li>
               <li>Project Cargo e Isotanks</li>
             </ul>
-            <a href="#sea-freight" class="svc-card__cta">Ver detalle →</a>
+            <a href="#sea-freight" class="svc-card__cta" data-i18n="cta.detail">Ver detalle →</a>
           </div>
           </a>
         </article>
@@ -1999,12 +2032,12 @@
           <div class="svc-card__body">
             <h3>Air Freight</h3>
             <ul class="svc-card__list">
-              <li>Urgente y Premium</li>
-              <li>Temperatura controlada</li>
+              <li data-i18n="air.li1">Urgente y Premium</li>
+              <li data-i18n="air.li2">Temperatura controlada</li>
               <li>Pharma & Hazardous</li>
               <li>Crosstrade shipments</li>
             </ul>
-            <a href="#air-freight" class="svc-card__cta">Ver detalle →</a>
+            <a href="#air-freight" class="svc-card__cta" data-i18n="cta.detail">Ver detalle →</a>
           </div>
           </a>
         </article>
@@ -2018,12 +2051,12 @@
           <div class="svc-card__body">
             <h3>Inland Freight</h3>
             <ul class="svc-card__list">
-              <li>FTL – Camión completo</li>
-              <li>LTL – Carga parcial</li>
-              <li>Refrigerado</li>
-              <li>ADR – Mercancías peligrosas</li>
+              <li data-i18n="inland.li1">FTL – Camión completo</li>
+              <li data-i18n="inland.li2">LTL – Carga parcial</li>
+              <li data-i18n="inland.li3">Refrigerado</li>
+              <li data-i18n="inland.li4">ADR – Mercancías peligrosas</li>
             </ul>
-            <a href="#inland-freight" class="svc-card__cta">Ver detalle →</a>
+            <a href="#inland-freight" class="svc-card__cta" data-i18n="cta.detail">Ver detalle →</a>
           </div>
           </a>
         </article>
@@ -2037,12 +2070,12 @@
           <div class="svc-card__body">
             <h3>Multimodal</h3>
             <ul class="svc-card__list">
-              <li>Puerta a puerta</li>
-              <li>Optimización de rutas</li>
-              <li>Grandes volúmenes</li>
-              <li>Coordinación integral</li>
+              <li data-i18n="multi.li1">Puerta a puerta</li>
+              <li data-i18n="multi.li2">Optimización de rutas</li>
+              <li data-i18n="multi.li3">Grandes volúmenes</li>
+              <li data-i18n="multi.li4">Coordinación integral</li>
             </ul>
-            <a href="#multimodal" class="svc-card__cta">Ver detalle →</a>
+            <a href="#multimodal" class="svc-card__cta" data-i18n="cta.detail">Ver detalle →</a>
           </div>
           </a>
         </article>
@@ -2059,30 +2092,30 @@
         <div class="sr">
           <span class="section-label">OUR SERVICES</span>
           <h2 class="section-title">Sea Freight</h2>
-          <p class="section-sub" style="margin-bottom:8px">El transporte marítimo es una de las formas más económicas de
+          <p class="section-sub" style="margin-bottom:8px" data-i18n="seafreight.desc">El transporte marítimo es una de las formas más económicas de
             trasladar mercaderías a grandes distancias. Gestionamos tanto flete de importación como de exportación, con
             una red de armadores consolidada y relaciones VIP con las principales líneas navieras del mundo.</p>
           <div class="svc-detail__features">
             <div class="svc-feat">
               <div class="svc-feat__icon">📦</div>
-              <div><strong>Capacidad total</strong><span>Grandes volúmenes sin límite de escala</span></div>
+              <div><strong data-i18n="seafreight.f1t">Capacidad total</strong><span data-i18n="seafreight.f1s">Grandes volúmenes sin límite de escala</span></div>
             </div>
             <div class="svc-feat">
               <div class="svc-feat__icon">📅</div>
-              <div><strong>Salidas semanales</strong><span>Servicios regulares 24/7 desde/hacia principales hubs</span>
+              <div><strong data-i18n="seafreight.f2t">Salidas semanales</strong><span data-i18n="seafreight.f2s">Servicios regulares 24/7 desde/hacia principales hubs</span>
               </div>
             </div>
             <div class="svc-feat">
               <div class="svc-feat__icon">🌡️</div>
-              <div><strong>Reefer containers</strong><span>Control de temperatura para carga perecedera y pharma</span>
+              <div><strong>Reefer containers</strong><span data-i18n="seafreight.f3s">Control de temperatura para carga perecedera y pharma</span>
               </div>
             </div>
             <div class="svc-feat">
               <div class="svc-feat__icon">⚠️</div>
-              <div><strong>Dangerous goods</strong><span>Manejo certificado de mercancías peligrosas</span></div>
+              <div><strong>Dangerous goods</strong><span data-i18n="seafreight.f4s">Manejo certificado de mercancías peligrosas</span></div>
             </div>
           </div>
-          <a href="#contacto" class="btn btn-ghost">Solicitar cotización marítima →</a>
+          <a href="#contacto" class="btn btn-ghost" data-i18n="seafreight.cta">Solicitar cotización marítima →</a>
         </div>
         <div class="svc-detail__img sr sr-d1">
           <img src="/src/transporte-maritimo-proud-shipping.png" alt="Buque portacontenedores – Proud Shipping Group"
@@ -2094,35 +2127,33 @@
         <div class="svc-type sr">
           <div class="svc-type__icon">📦</div>
           <h4>FCL</h4>
-          <p>Contenedor completo para tu carga. Mayor seguridad y tiempos de tránsito predecibles.</p>
+          <p data-i18n="seafreight.t1">Contenedor completo para tu carga. Mayor seguridad y tiempos de tránsito predecibles.</p>
         </div>
         <div class="svc-type sr sr-d1">
           <div class="svc-type__icon">🗃️</div>
           <h4>LCL</h4>
-          <p>Consolidamos tu carga con otras, reduciendo costos sin sacrificar tiempos.</p>
+          <p data-i18n="seafreight.t2">Consolidamos tu carga con otras, reduciendo costos sin sacrificar tiempos.</p>
         </div>
         <div class="svc-type sr sr-d2">
           <div class="svc-type__icon">⚓</div>
           <h4>Break Bulk / RoRo</h4>
-          <p>Para carga sobredimensionada, maquinaria pesada y vehículos rodantes.</p>
+          <p data-i18n="seafreight.t3">Para carga sobredimensionada, maquinaria pesada y vehículos rodantes.</p>
         </div>
         <div class="svc-type sr sr-d3">
           <div class="svc-type__icon">🏗️</div>
           <h4>Project Cargo</h4>
-          <p>Gestión integral de proyectos especiales con equipos dedicados e ingeniería de ruta.</p>
+          <p data-i18n="seafreight.t4">Gestión integral de proyectos especiales con equipos dedicados e ingeniería de ruta.</p>
         </div>
       </div>
       <div class="svc-benefits sr">
         <div class="svc-benefit">
-          <div class="svc-benefit__icon">💰</div><strong>Cost Effective</strong><span>Tarifa óptima por tonelada</span>
+          <div class="svc-benefit__icon">💰</div><strong>Cost Effective</strong><span data-i18n="seafreight.b1">Tarifa óptima por tonelada</span>
         </div>
         <div class="svc-benefit">
-          <div class="svc-benefit__icon">🛡️</div><strong>Seguridad</strong><span>Sistemas avanzados en cada
-            buque</span>
+          <div class="svc-benefit__icon">🛡️</div><strong data-i18n="seafreight.b2t">Seguridad</strong><span data-i18n="seafreight.b2s">Sistemas avanzados en cada buque</span>
         </div>
         <div class="svc-benefit">
-          <div class="svc-benefit__icon">📊</div><strong>Confiabilidad</strong><span>Fechas de salida y llegada
-            predecibles</span>
+          <div class="svc-benefit__icon">📊</div><strong data-i18n="seafreight.b3t">Confiabilidad</strong><span data-i18n="seafreight.b3s">Fechas de salida y llegada predecibles</span>
         </div>
       </div>
     </div>
@@ -2142,65 +2173,61 @@
         <div class="sr sr-d1">
           <span class="section-label">OUR SERVICES</span>
           <h2 class="section-title">Air Freight</h2>
-          <p class="section-sub" style="margin-bottom:8px">Coordinamos envíos de importación, exportación y crosstrade.
+          <p class="section-sub" style="margin-bottom:8px" data-i18n="airfreight.desc">Coordinamos envíos de importación, exportación y crosstrade.
             Nuestro equipo especializado garantiza rapidez, trazabilidad y el cumplimiento de normativas internacionales
             para cualquier tipo de carga aérea.</p>
           <div class="svc-detail__features">
             <div class="svc-feat">
               <div class="svc-feat__icon">⚡</div>
-              <div><strong>Entregas urgentes</strong><span>Vuelos programados con horarios precisos</span></div>
+              <div><strong data-i18n="airfreight.f1t">Entregas urgentes</strong><span data-i18n="airfreight.f1s">Vuelos programados con horarios precisos</span></div>
             </div>
             <div class="svc-feat">
               <div class="svc-feat__icon">🌡️</div>
-              <div><strong>Temperatura controlada</strong><span>Cold chain para pharma y perecederos</span></div>
+              <div><strong data-i18n="airfreight.f2t">Temperatura controlada</strong><span data-i18n="airfreight.f2s">Cold chain para pharma y perecederos</span></div>
             </div>
             <div class="svc-feat">
               <div class="svc-feat__icon">✈️</div>
-              <div><strong>Charter service</strong><span>Aeronaves exclusivas para cargas especiales</span></div>
+              <div><strong>Charter service</strong><span data-i18n="airfreight.f3s">Aeronaves exclusivas para cargas especiales</span></div>
             </div>
             <div class="svc-feat">
               <div class="svc-feat__icon">📋</div>
-              <div><strong>Reporting y trazabilidad</strong><span>Tracking en tiempo real y distribución con
-                  informes</span></div>
+              <div><strong data-i18n="airfreight.f4t">Reporting y trazabilidad</strong><span data-i18n="airfreight.f4s">Tracking en tiempo real y distribución con informes</span></div>
             </div>
           </div>
-          <a href="#contacto" class="btn btn-ghost">Solicitar cotización aérea →</a>
+          <a href="#contacto" class="btn btn-ghost" data-i18n="airfreight.cta">Solicitar cotización aérea →</a>
         </div>
       </div>
       <div class="svc-types">
         <div class="svc-type sr">
           <div class="svc-type__icon">📦</div>
-          <h4>General Cargo</h4>
-          <p>Mercancía estándar gestionada con eficiencia y puntualidad.</p>
+          <h4 data-i18n="airfreight.t1h">General Cargo</h4>
+          <p data-i18n="airfreight.t1p">Mercancía estándar gestionada con eficiencia y puntualidad.</p>
         </div>
         <div class="svc-type sr sr-d1">
           <div class="svc-type__icon">🌡️</div>
-          <h4>Temperatura Controlada</h4>
-          <p>Cadena de frío certificada para farmacéuticos y alimentos perecederos.</p>
+          <h4 data-i18n="airfreight.t2h">Temperatura Controlada</h4>
+          <p data-i18n="airfreight.t2p">Cadena de frío certificada para farmacéuticos y alimentos perecederos.</p>
         </div>
         <div class="svc-type sr sr-d2">
           <div class="svc-type__icon">⚠️</div>
           <h4>Hazardous Cargo</h4>
-          <p>Transporte de mercancías peligrosas bajo normativa IATA DGR.</p>
+          <p data-i18n="airfreight.t3p">Transporte de mercancías peligrosas bajo normativa IATA DGR.</p>
         </div>
         <div class="svc-type sr sr-d3">
           <div class="svc-type__icon">📏</div>
           <h4>Dimensional / Exclusive</h4>
-          <p>Carga sobredimensionada o exclusiva con equipos especializados.</p>
+          <p data-i18n="airfreight.t4p">Carga sobredimensionada o exclusiva con equipos especializados.</p>
         </div>
       </div>
       <div class="svc-benefits sr">
         <div class="svc-benefit">
-          <div class="svc-benefit__icon">⏱️</div><strong>Velocidad</strong><span>Tránsitos internacionales en
-            24–72hs</span>
+          <div class="svc-benefit__icon">⏱️</div><strong data-i18n="airfreight.b1t">Velocidad</strong><span data-i18n="airfreight.b1s">Tránsitos internacionales en 24–72hs</span>
         </div>
         <div class="svc-benefit">
-          <div class="svc-benefit__icon">🌐</div><strong>Flexibilidad</strong><span>Alcanzamos cualquier punto del
-            mundo</span>
+          <div class="svc-benefit__icon">🌐</div><strong data-i18n="airfreight.b2t">Flexibilidad</strong><span data-i18n="airfreight.b2s">Alcanzamos cualquier punto del mundo</span>
         </div>
         <div class="svc-benefit">
-          <div class="svc-benefit__icon">🛡️</div><strong>Menor riesgo de daños</strong><span>Manipulación especializada
-            en origen y destino</span>
+          <div class="svc-benefit__icon">🛡️</div><strong data-i18n="airfreight.b3t">Menor riesgo de daños</strong><span data-i18n="airfreight.b3s">Manipulación especializada en origen y destino</span>
         </div>
       </div>
     </div>
@@ -2215,30 +2242,30 @@
         <div class="sr">
           <span class="section-label">OUR SERVICES</span>
           <h2 class="section-title">Inland Freight</h2>
-          <p class="section-sub" style="margin-bottom:8px">El transporte terrestre internacional entre dos o más países
+          <p class="section-sub" style="margin-bottom:8px" data-i18n="inlandfreight.desc">El transporte terrestre internacional entre dos o más países
             es una herramienta esencial para el comercio global. Trabajamos con una red de transportistas que ofrecen
             beneficios en costo y disponibilidad, con agentes en puntos clave de cada país para control total de la
             carga en cada etapa.</p>
           <div class="svc-detail__features">
             <div class="svc-feat">
               <div class="svc-feat__icon">🛡️</div>
-              <div><strong>Seguridad total</strong><span>GPS, monitoreo 24/7 y protocolos ADR certificados</span></div>
+              <div><strong data-i18n="inlandfreight.f1t">Seguridad total</strong><span data-i18n="inlandfreight.f1s">GPS, monitoreo 24/7 y protocolos ADR certificados</span></div>
             </div>
             <div class="svc-feat">
               <div class="svc-feat__icon">🗺️</div>
-              <div><strong>Cobertura regional</strong><span>Bolivia, Paraguay, Chile, Brasil, Uruguay, Perú</span></div>
+              <div><strong data-i18n="inlandfreight.f2t">Cobertura regional</strong><span>Bolivia, Paraguay, Chile, Brasil, Uruguay, Perú</span></div>
             </div>
             <div class="svc-feat">
               <div class="svc-feat__icon">⏱️</div>
-              <div><strong>Puntualidad</strong><span>KPIs de cumplimiento superiores al 97%</span></div>
+              <div><strong data-i18n="inlandfreight.f3t">Puntualidad</strong><span data-i18n="inlandfreight.f3s">KPIs de cumplimiento superiores al 97%</span></div>
             </div>
             <div class="svc-feat">
               <div class="svc-feat__icon">🔧</div>
-              <div><strong>Flexibilidad operativa</strong><span>Rutas y frecuencias adaptadas a tu operación</span>
+              <div><strong data-i18n="inlandfreight.f4t">Flexibilidad operativa</strong><span data-i18n="inlandfreight.f4s">Rutas y frecuencias adaptadas a tu operación</span>
               </div>
             </div>
           </div>
-          <a href="#contacto" class="btn btn-ghost">Solicitar cotización terrestre →</a>
+          <a href="#contacto" class="btn btn-ghost" data-i18n="inlandfreight.cta">Solicitar cotización terrestre →</a>
         </div>
         <div class="svc-detail__img sr sr-d1">
           <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=900&auto=format&fit=crop&q=80"
@@ -2249,37 +2276,34 @@
       <div class="svc-types">
         <div class="svc-type sr">
           <div class="svc-type__icon">📦</div>
-          <h4>FTL – Carga Completa</h4>
-          <p>Exclusividad total del vehículo para mayor seguridad y rapidez en destino.</p>
+          <h4 data-i18n="inlandfreight.t1h">FTL – Carga Completa</h4>
+          <p data-i18n="inlandfreight.t1p">Exclusividad total del vehículo para mayor seguridad y rapidez en destino.</p>
         </div>
         <div class="svc-type sr sr-d1">
           <div class="svc-type__icon">🗃️</div>
-          <h4>LTL – Carga Consolidada</h4>
-          <p>Optimizá costos compartiendo espacio con otras cargas sin perder control.</p>
+          <h4 data-i18n="inlandfreight.t2h">LTL – Carga Consolidada</h4>
+          <p data-i18n="inlandfreight.t2p">Optimizá costos compartiendo espacio con otras cargas sin perder control.</p>
         </div>
         <div class="svc-type sr sr-d2">
           <div class="svc-type__icon">❄️</div>
-          <h4>Refrigerada</h4>
-          <p>Control de temperatura certificado para alimentos, cosméticos y farmacéuticos.</p>
+          <h4 data-i18n="inlandfreight.t3h">Refrigerada</h4>
+          <p data-i18n="inlandfreight.t3p">Control de temperatura certificado para alimentos, cosméticos y farmacéuticos.</p>
         </div>
         <div class="svc-type sr sr-d3">
           <div class="svc-type__icon">⚠️</div>
-          <h4>ADR – Peligrosa</h4>
-          <p>Transporte de mercancías peligrosas con personal certificado y máxima normativa.</p>
+          <h4 data-i18n="inlandfreight.t4h">ADR – Peligrosa</h4>
+          <p data-i18n="inlandfreight.t4p">Transporte de mercancías peligrosas con personal certificado y máxima normativa.</p>
         </div>
       </div>
       <div class="svc-benefits sr">
         <div class="svc-benefit">
-          <div class="svc-benefit__icon">💲</div><strong>Low Cost</strong><span>Red optimizada para tarifas
-            competitivas</span>
+          <div class="svc-benefit__icon">💲</div><strong>Low Cost</strong><span data-i18n="inlandfreight.b1s">Red optimizada para tarifas competitivas</span>
         </div>
         <div class="svc-benefit">
-          <div class="svc-benefit__icon">📍</div><strong>Door to Door</strong><span>Pickup y entrega en cualquier punto
-            de la región</span>
+          <div class="svc-benefit__icon">📍</div><strong>Door to Door</strong><span data-i18n="inlandfreight.b2s">Pickup y entrega en cualquier punto de la región</span>
         </div>
         <div class="svc-benefit">
-          <div class="svc-benefit__icon">🔥</div><strong>Express Services</strong><span>Servicio urgente disponible
-            según disponibilidad</span>
+          <div class="svc-benefit__icon">🔥</div><strong>Express Services</strong><span data-i18n="inlandfreight.b3s">Servicio urgente disponible según disponibilidad</span>
         </div>
       </div>
     </div>
@@ -2299,7 +2323,7 @@
         <div class="sr sr-d1">
           <span class="section-label">OUR SERVICES</span>
           <h2 class="section-title">Multimodal Shipments</h2>
-          <p class="section-sub" style="margin-bottom:8px">Esta modalidad nos permite tener otros puertos de salida
+          <p class="section-sub" style="margin-bottom:8px" data-i18n="multimodal.desc">Esta modalidad nos permite tener otros puertos de salida
             combinando dos o más medios de transporte. Contamos con salidas vía el Pacífico desde San Antonio o
             Valparaíso, así como vía Antofagasta o Puerto Coronel, al Norte y Sur respectivamente. También es posible
             transitar por Argentina desde cualquier país limítrofe por vía terrestre, partiendo del puerto de Buenos
@@ -2307,24 +2331,24 @@
           <div class="svc-detail__features">
             <div class="svc-feat ">
               <div class="svc-feat__icon">🔄</div>
-              <div><strong>Coordinación integral</strong><span>Un solo interlocutor para toda la cadena logística</span>
+              <div><strong data-i18n="multimodal.f1t">Coordinación integral</strong><span data-i18n="multimodal.f1s">Un solo interlocutor para toda la cadena logística</span>
               </div>
             </div>
             <div class="svc-feat">
               <div class="svc-feat__icon">💡</div>
-              <div><strong>Optimización de rutas</strong><span>Ingeniería de rutas para el mejor costo/tiempo</span>
+              <div><strong data-i18n="multimodal.f2t">Optimización de rutas</strong><span data-i18n="multimodal.f2s">Ingeniería de rutas para el mejor costo/tiempo</span>
               </div>
             </div>
             <div class="svc-feat">
               <div class="svc-feat__icon">📏</div>
-              <div><strong>Grandes volúmenes</strong><span>Capacidad para project cargo y cargas especiales</span></div>
+              <div><strong data-i18n="multimodal.f3t">Grandes volúmenes</strong><span data-i18n="multimodal.f3s">Capacidad para project cargo y cargas especiales</span></div>
             </div>
             <div class="svc-feat">
               <div class="svc-feat__icon">🌐</div>
-              <div><strong>Acceso a más puertos</strong><span>Pacífico, Atlántico y conexiones interiores</span></div>
+              <div><strong data-i18n="multimodal.f4t">Acceso a más puertos</strong><span data-i18n="multimodal.f4s">Pacífico, Atlántico y conexiones interiores</span></div>
             </div>
           </div>
-          <a href="#contacto" class="btn btn-ghost">Solicitar solución multimodal →</a>
+          <a href="#contacto" class="btn btn-ghost" data-i18n="multimodal.cta">Solicitar solución multimodal →</a>
         </div>
       </div>
 
@@ -2334,8 +2358,7 @@
         <div class="multimodal-map__inner">
           <div>
             <span class="section-label" style="color:rgba(255,255,255,.5)">Rutas principales</span>
-            <h3 style="color:var(--white);font-size:1.5rem;font-weight:800;margin-bottom:20px">Salidas desde Sudamérica
-            </h3>
+            <h3 style="color:var(--white);font-size:1.5rem;font-weight:800;margin-bottom:20px" data-i18n="multimodal.routes.title">Salidas desde Sudamérica</h3>
             <div class="route-list">
               <div class="route-item">
                 <div class="route-dot"></div><span>🇦🇷 Buenos Aires → Mundo (Atlántico)</span>
@@ -2368,23 +2391,23 @@
       <div class="svc-types" style="margin-top:40px">
         <div class="svc-type sr">
           <div class="svc-type__icon">🚢➕🚛</div>
-          <h4>Mar + Tierra</h4>
-          <p>Combinación marítima y terrestre para llegar a destinos sin salida al mar.</p>
+          <h4 data-i18n="multimodal.t1h">Mar + Tierra</h4>
+          <p data-i18n="multimodal.t1p">Combinación marítima y terrestre para llegar a destinos sin salida al mar.</p>
         </div>
         <div class="svc-type sr sr-d1">
           <div class="svc-type__icon">✈️➕🚛</div>
-          <h4>Aire + Tierra</h4>
-          <p>Velocidad aérea con distribución terrestre en última milla.</p>
+          <h4 data-i18n="multimodal.t2h">Aire + Tierra</h4>
+          <p data-i18n="multimodal.t2p">Velocidad aérea con distribución terrestre en última milla.</p>
         </div>
         <div class="svc-type sr sr-d2">
           <div class="svc-type__icon">🌐</div>
-          <h4>Puerta a Puerta</h4>
-          <p>Gestión integral de pickup a entrega final sin intermediarios.</p>
+          <h4 data-i18n="multimodal.t3h">Puerta a Puerta</h4>
+          <p data-i18n="multimodal.t3p">Gestión integral de pickup a entrega final sin intermediarios.</p>
         </div>
         <div class="svc-type sr sr-d3">
           <div class="svc-type__icon">📊</div>
-          <h4>Grandes Volúmenes</h4>
-          <p>Soluciones a escala para operaciones de alto volumen y project cargo.</p>
+          <h4 data-i18n="multimodal.t4h">Grandes Volúmenes</h4>
+          <p data-i18n="multimodal.t4p">Soluciones a escala para operaciones de alto volumen y project cargo.</p>
         </div>
       </div>
     </div>
@@ -2403,30 +2426,27 @@
         </div>
         <div class="sr sr-d1">
           <span class="section-label">ADDITIONAL SERVICES</span>
-          <h2 class="section-title">Almacenaje Fiscal & Servicios Logísticos</h2>
-          <p class="section-sub" style="margin-bottom:8px">Garantizamos la trazabilidad de tu carga para que llegue a
+          <h2 class="section-title" data-i18n="warehouse.title">Almacenaje Fiscal & Servicios Logísticos</h2>
+          <p class="section-sub" style="margin-bottom:8px" data-i18n="warehouse.desc">Garantizamos la trazabilidad de tu carga para que llegue a
             destino en perfectas condiciones. Ofrecemos servicios de almacenaje fiscal, transporte doméstico, seguros de
             carga y gestión de inventarios con control digital y videomonitoreo.</p>
           <div class="svc-detail__features">
             <div class="svc-feat">
               <div class="svc-feat__icon">🏭</div>
-              <div><strong>Almacén Fiscal</strong><span>Import/Export, desconsolidación, palletizado y control
-                  digital</span></div>
+              <div><strong data-i18n="warehouse.f1t">Almacén Fiscal</strong><span data-i18n="warehouse.f1s">Import/Export, desconsolidación, palletizado y control digital</span></div>
             </div>
             <div class="svc-feat">
               <div class="svc-feat__icon">🚐</div>
-              <div><strong>Transporte Doméstico</strong><span>Door to door, tracking online, facturación
-                  electrónica</span></div>
+              <div><strong data-i18n="warehouse.f2t">Transporte Doméstico</strong><span data-i18n="warehouse.f2s">Door to door, tracking online, facturación electrónica</span></div>
             </div>
             <div class="svc-feat">
               <div class="svc-feat__icon">🛡️</div>
-              <div><strong>Seguros de Carga</strong><span>Trabajamos con las mejores aseguradoras del mercado</span>
+              <div><strong data-i18n="warehouse.f3t">Seguros de Carga</strong><span data-i18n="warehouse.f3s">Trabajamos con las mejores aseguradoras del mercado</span>
               </div>
             </div>
             <div class="svc-feat">
               <div class="svc-feat__icon">📦</div>
-              <div><strong>Almacén Doméstico</strong><span>Optimización de costos de manejo y acondicionamiento
-                  COMEX</span></div>
+              <div><strong data-i18n="warehouse.f4t">Almacén Doméstico</strong><span data-i18n="warehouse.f4s">Optimización de costos de manejo y acondicionamiento COMEX</span></div>
             </div>
           </div>
         </div>
@@ -2435,22 +2455,22 @@
         <div class="svc-type sr">
           <div class="svc-type__icon">💊</div>
           <h4>Pharma & Health</h4>
-          <p>Cold chain y trazabilidad completa para productos regulados.</p>
+          <p data-i18n="warehouse.t1p">Cold chain y trazabilidad completa para productos regulados.</p>
         </div>
         <div class="svc-type sr sr-d1">
           <div class="svc-type__icon">🛢️</div>
           <h4>Oil & Gas</h4>
-          <p>Manejo especializado de insumos y equipos para la industria energética.</p>
+          <p data-i18n="warehouse.t2p">Manejo especializado de insumos y equipos para la industria energética.</p>
         </div>
         <div class="svc-type sr sr-d2">
           <div class="svc-type__icon">🍔</div>
           <h4>Food & Beverages</h4>
-          <p>Gestión de perecederos con cadena de frío certificada.</p>
+          <p data-i18n="warehouse.t3p">Gestión de perecederos con cadena de frío certificada.</p>
         </div>
         <div class="svc-type sr sr-d3">
           <div class="svc-type__icon">🏎️</div>
           <h4>Vehicles & Spare Parts</h4>
-          <p>Autos, motos y repuestos para industria naval y automotriz.</p>
+          <p data-i18n="warehouse.t4p">Autos, motos y repuestos para industria naval y automotriz.</p>
         </div>
       </div>
     </div>
@@ -2462,9 +2482,9 @@
   <section class="coverage" id="cobertura" aria-label="Cobertura global">
     <div class="container">
       <div class="coverage__header sr">
-        <span class="section-label" style="color:rgba(255,255,255,.5)">Alcance internacional</span>
-        <h2 class="section-title text-white">Cobertura verdaderamente global</h2>
-        <p class="section-sub" style="color:rgba(255,255,255,.55);margin:0 auto;max-width:520px">Red de agentes y
+        <span class="section-label" style="color:rgba(255,255,255,.5)" data-i18n="coverage.label">Alcance internacional</span>
+        <h2 class="section-title text-white" data-i18n="coverage.title">Cobertura verdaderamente global</h2>
+        <p class="section-sub" style="color:rgba(255,255,255,.55);margin:0 auto;max-width:520px" data-i18n="coverage.sub">Red de agentes y
           alianzas estratégicas en los principales hubs logísticos del mundo.</p>
       </div>
       <div class="coverage__map sr">
@@ -2475,15 +2495,15 @@
       <div class="coverage__stats">
         <div class="cov-stat sr">
           <div class="cov-stat__icon">🤝</div><span class="cov-stat__num" data-target="120">0</span>
-          <div class="cov-stat__label">Agentes globales</div>
+          <div class="cov-stat__label" data-i18n="hero.stat1">Agentes globales</div>
         </div>
         <div class="cov-stat sr sr-d1">
           <div class="cov-stat__icon">🌍</div><span class="cov-stat__num" data-target="50">0</span>
-          <div class="cov-stat__label">Países operativos</div>
+          <div class="cov-stat__label" data-i18n="coverage.stat2">Países operativos</div>
         </div>
         <div class="cov-stat sr sr-d2">
           <div class="cov-stat__icon">⚓</div><span class="cov-stat__num" data-target="250">0</span>
-          <div class="cov-stat__label">Puertos conectados</div>
+          <div class="cov-stat__label" data-i18n="hero.stat3">Puertos conectados</div>
         </div>
       </div>
     </div>
@@ -2495,44 +2515,44 @@
   <section class="diff" aria-label="Por qué elegirnos">
     <div class="container">
       <div class="diff__header sr">
-        <span class="section-label">Por qué elegirnos</span>
-        <h2 class="section-title">Nuestros diferenciales</h2>
-        <p class="section-sub" style="margin:0 auto;max-width:480px">Lo que distingue a Proud Shipping Group de
+        <span class="section-label" data-i18n="diff.label">Por qué elegirnos</span>
+        <h2 class="section-title" data-i18n="diff.title">Nuestros diferenciales</h2>
+        <p class="section-sub" style="margin:0 auto;max-width:480px" data-i18n="diff.sub">Lo que distingue a Proud Shipping Group de
           cualquier otro operador del mercado.</p>
       </div>
       <div class="diff__grid">
         <div class="diff-card sr">
           <div class="diff-card__icon">🎯</div>
-          <h3>Atención personalizada</h3>
-          <p>Un ejecutivo dedicado a tu cuenta, disponible para responder en menos de 2 horas hábiles en cualquier
+          <h3 data-i18n="diff.c1t">Atención personalizada</h3>
+          <p data-i18n="diff.c1p">Un ejecutivo dedicado a tu cuenta, disponible para responder en menos de 2 horas hábiles en cualquier
             operación activa.</p>
         </div>
         <div class="diff-card sr sr-d1">
           <div class="diff-card__icon">📡</div>
-          <h3>Seguimiento en tiempo real</h3>
-          <p>Trazabilidad completa de tu carga con actualizaciones proactivas en cada hito del proceso logístico.</p>
+          <h3 data-i18n="diff.c2t">Seguimiento en tiempo real</h3>
+          <p data-i18n="diff.c2p">Trazabilidad completa de tu carga con actualizaciones proactivas en cada hito del proceso logístico.</p>
         </div>
         <div class="diff-card sr sr-d2">
           <div class="diff-card__icon">🌐</div>
-          <h3>Red global consolidada</h3>
-          <p>Más de 120 agentes en todos los continentes garantizan operaciones fluidas sin importar el destino.</p>
+          <h3 data-i18n="diff.c3t">Red global consolidada</h3>
+          <p data-i18n="diff.c3p">Más de 120 agentes en todos los continentes garantizan operaciones fluidas sin importar el destino.</p>
         </div>
         <div class="diff-card sr sr-d1">
           <div class="diff-card__icon">💡</div>
-          <h3>Optimización de costos</h3>
-          <p>Analizamos cada ruta y modalidad para encontrar la opción más eficiente sin sacrificar tiempos ni
+          <h3 data-i18n="diff.c4t">Optimización de costos</h3>
+          <p data-i18n="diff.c4p">Analizamos cada ruta y modalidad para encontrar la opción más eficiente sin sacrificar tiempos ni
             seguridad.</p>
         </div>
         <div class="diff-card sr sr-d2">
           <div class="diff-card__icon">🏆</div>
-          <h3>Experiencia internacional</h3>
-          <p>Más de 15 años operando en mercados complejos nos dan el know-how para resolver cualquier desafío
+          <h3 data-i18n="diff.c5t">Experiencia internacional</h3>
+          <p data-i18n="diff.c5p">Más de 15 años operando en mercados complejos nos dan el know-how para resolver cualquier desafío
             logístico.</p>
         </div>
         <div class="diff-card sr sr-d3">
           <div class="diff-card__icon">🤝</div>
-          <h3>Compromiso real</h3>
-          <p>Tu éxito es nuestro éxito. Construimos relaciones de largo plazo basadas en confianza y resultados
+          <h3 data-i18n="diff.c6t">Compromiso real</h3>
+          <p data-i18n="diff.c6p">Tu éxito es nuestro éxito. Construimos relaciones de largo plazo basadas en confianza y resultados
             concretos.</p>
         </div>
       </div>
@@ -2544,9 +2564,9 @@
      ===================================================== -->
   <section class="team" id="equipo" aria-label="Nuestro equipo">
     <div class="container text-center">
-      <div class="sr"><span class="section-label">Nuestro equipo</span>
-        <h2 class="section-title">¿Quiénes somos?</h2>
-        <p class="section-sub" style="margin:0 auto;max-width:440px">Profesionales con experiencia internacional y
+      <div class="sr"><span class="section-label" data-i18n="team.label">Nuestro equipo</span>
+        <h2 class="section-title" data-i18n="team.title">¿Quiénes somos?</h2>
+        <p class="section-sub" style="margin:0 auto;max-width:440px" data-i18n="team.sub">Profesionales con experiencia internacional y
           vocación de servicio para cada operación.</p>
       </div>
       <div class="team__grid">
@@ -2588,11 +2608,11 @@
   <section class="cta-final" aria-label="Llamada a la acción">
     <div class="cta-final__inner sr">
       <h2>Ready to move<br />your cargo?</h2>
-      <p>Contactanos hoy y recibí una cotización personalizada en menos de 24 horas. Sin compromisos, con total
+      <p data-i18n="cta.final.p">Contactanos hoy y recibí una cotización personalizada en menos de 24 horas. Sin compromisos, con total
         transparencia. <strong style="color:rgba(255,255,255,.9)">We Make It Happen.</strong></p>
       <div class="cta-final__actions">
-        <a href="#contacto" class="btn btn-white">Solicitar cotización →</a>
-        <a href="#servicios" class="btn btn-outline">Ver servicios</a>
+        <a href="#contacto" class="btn btn-white" data-i18n="nav.cta">Solicitar cotización →</a>
+        <a href="#servicios" class="btn btn-outline" data-i18n="nav.services">Ver servicios</a>
       </div>
     </div>
   </section>
@@ -2612,7 +2632,7 @@
             </div>
             Proud Shipping S.A
           </div>
-          <p>Operador logístico internacional con presencia global. <br />Transport · Logistics · Supply Chain ·
+          <p data-i18n="footer.brand">Operador logístico internacional con presencia global. <br />Transport · Logistics · Supply Chain ·
             Warehousing</p>
           <p style="margin-top:16px;font-size:.75rem;color:rgba(255,255,255,.3)">Pasaje Carabelas 241 PB – C1009AAA
             CABA, Argentina<br />Tel: +54 911 7221-5182</p>
@@ -2620,7 +2640,7 @@
 
         <!-- Nav -->
         <div class="footer__col">
-          <h4>Servicios</h4>
+          <h4 data-i18n="nav.services">Servicios</h4>
           <ul>
             <li><a href="#sea-freight">Sea Freight</a></li>
             <li><a href="#air-freight">Air Freight</a></li>
@@ -2632,7 +2652,7 @@
 
         <!-- Offices -->
         <div class="footer__col">
-          <h4>Oficinas</h4>
+          <h4 data-i18n="footer.offices">Oficinas</h4>
           <div class="footer__office">
             <strong>🇦🇷 Buenos Aires</strong>
             <span>Pasaje Carabelas 241 PB<br />C1009AAA CABA<br />+54 911 7221-5182</span>
@@ -2646,7 +2666,7 @@
         <!-- Contact Form -->
         <div class="footer__col" id="form-section">
           <div class="contact-form" role="form" aria-label="Formulario de cotización">
-            <h3>Solicitar cotización</h3>
+            <h3 data-i18n="nav.cta">Solicitar cotización</h3>
             <form id="quoteForm" novalidate autocomplete="off">
               <!-- CSRF-like hidden field -->
               <input type="hidden" id="formToken" name="_token" />
@@ -2655,58 +2675,58 @@
                 tabindex="-1" autocomplete="off" aria-hidden="true" />
 
               <div class="form-group">
-                <label for="userName">Nombre completo *</label>
+                <label for="userName" data-i18n="form.name">Nombre completo *</label>
                 <input class="form-control" type="text" id="userName" name="from_name" placeholder="Tu nombre"
                   maxlength="80" required autocomplete="off" />
-                <div class="form-error-msg" role="alert">Por favor ingresá tu nombre.</div>
+                <div class="form-error-msg" role="alert" data-i18n="form.name.err">Por favor ingresá tu nombre.</div>
               </div>
               <div class="form-group">
-                <label for="userEmail">Email corporativo *</label>
+                <label for="userEmail" data-i18n="form.email">Email corporativo *</label>
                 <input class="form-control" type="email" id="userEmail" name="reply_to" placeholder="correo@empresa.com"
                   maxlength="100" required autocomplete="off" />
-                <div class="form-error-msg" role="alert">Por favor ingresá un email válido.</div>
+                <div class="form-error-msg" role="alert" data-i18n="form.email.err">Por favor ingresá un email válido.</div>
               </div>
               <div class="form-group">
-                <label for="userCompany">Empresa</label>
+                <label for="userCompany" data-i18n="form.company">Empresa</label>
                 <input class="form-control" type="text" id="userCompany" name="company"
                   placeholder="Nombre de tu empresa" maxlength="80" autocomplete="off" />
               </div>
               <div class="form-group">
-                <label for="userOrigin">Puerto / Ciudad de origen *</label>
+                <label for="userOrigin" data-i18n="form.origin">Puerto / Ciudad de origen *</label>
                 <input class="form-control" type="text" id="userOrigin" name="origin"
                   placeholder="Ej: Buenos Aires, Shanghai…" maxlength="80" required autocomplete="off" />
-                <div class="form-error-msg" role="alert">Por favor indicá el origen.</div>
+                <div class="form-error-msg" role="alert" data-i18n="form.origin.err">Por favor indicá el origen.</div>
               </div>
               <div class="form-group">
-                <label for="cargoType">Tipo de servicio *</label>
+                <label for="cargoType" data-i18n="form.service">Tipo de servicio *</label>
                 <select class="form-control" id="cargoType" name="cargo_type" required>
-                  <option value="" disabled selected>Seleccioná un servicio</option>
+                  <option value="" disabled selected data-i18n="form.service.ph">Seleccioná un servicio</option>
                   <option value="Sea FCL">Sea Freight – FCL</option>
                   <option value="Sea LCL">Sea Freight – LCL</option>
                   <option value="Sea Break Bulk">Sea Freight – Break Bulk / RoRo</option>
-                  <option value="Air Standard">Air Freight – Estándar</option>
-                  <option value="Air Urgent">Air Freight – Urgente</option>
+                  <option value="Air Standard" data-i18n="form.air.std">Air Freight – Estándar</option>
+                  <option value="Air Urgent" data-i18n="form.air.urg">Air Freight – Urgente</option>
                   <option value="Air Pharma">Air Freight – Pharma / Temp. Ctrl.</option>
                   <option value="Inland FTL">Inland Freight – FTL</option>
                   <option value="Inland LTL">Inland Freight – LTL</option>
-                  <option value="Inland Reefer">Inland Freight – Refrigerado</option>
-                  <option value="Inland ADR">Inland Freight – Peligroso (ADR)</option>
-                  <option value="Multimodal">Transporte Multimodal</option>
-                  <option value="Warehousing">Almacenaje Fiscal</option>
-                  <option value="Other">Otro / Consulta general</option>
+                  <option value="Inland Reefer" data-i18n="form.inland.ref">Inland Freight – Refrigerado</option>
+                  <option value="Inland ADR" data-i18n="form.inland.adr">Inland Freight – Peligroso (ADR)</option>
+                  <option value="Multimodal" data-i18n="form.multi">Transporte Multimodal</option>
+                  <option value="Warehousing" data-i18n="form.wh">Almacenaje Fiscal</option>
+                  <option value="Other" data-i18n="form.other">Otro / Consulta general</option>
                 </select>
-                <div class="form-error-msg" role="alert">Por favor seleccioná el tipo de servicio.</div>
+                <div class="form-error-msg" role="alert" data-i18n="form.service.err">Por favor seleccioná el tipo de servicio.</div>
               </div>
               <div class="form-group">
-                <label for="userMessage">Mensaje adicional</label>
+                <label for="userMessage" data-i18n="form.msg">Mensaje adicional</label>
                 <input class="form-control" type="text" id="userMessage" name="message"
                   placeholder="Detalles adicionales, destino, etc." maxlength="300" autocomplete="off" />
               </div>
 
               <button type="submit" class="btn btn-primary form-submit-btn" id="submitBtn"
                 aria-label="Enviar solicitud de cotización">
-                <span id="btnText">Enviar solicitud</span>
-                <span id="btnLoader" style="display:none" aria-label="Enviando...">Enviando…</span>
+                <span id="btnText" data-i18n="form.submit">Enviar solicitud</span>
+                <span id="btnLoader" style="display:none" aria-label="Enviando..." data-i18n="form.sending">Enviando…</span>
               </button>
               <div class="form-rate-info" aria-live="polite" id="rateInfo"></div>
             </form>
@@ -2716,7 +2736,7 @@
       </div>
 
       <div class="footer__bottom">
-        <p class="footer__copy">© 2025 Proud Shipping Group – AR. We Make It Happen. Todos los derechos reservados.</p>
+        <p class="footer__copy" data-i18n="footer.copy">© 2025 Proud Shipping Group – AR. We Make It Happen. Todos los derechos reservados.</p>
         <div class="footer__socials" aria-label="Redes sociales">
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer__social"
             aria-label="LinkedIn">in</a>
@@ -3033,6 +3053,259 @@
         makePlaceholder('Mapa Multimodal – Sudamérica', saEl);
       }
     })();
+
+    /* ================================================================
+       LANGUAGE SWITCHER – i18n
+       ================================================================ */
+    var currentLang = 'es';
+
+    var translations = {
+      es: {
+        'nav.home': 'Home',
+        'nav.about': 'Nosotros',
+        'nav.services': 'Servicios',
+        'nav.coverage': 'Cobertura',
+        'nav.team': 'Equipo',
+        'nav.cta': 'Solicitar cotización',
+        'hero.eyebrow': 'Operaciones activas en +50 países',
+        'hero.sub': 'Conectamos tu carga con el mundo con eficiencia, confiabilidad y un equipo dedicado a cada operación. <strong style="color:rgba(255,255,255,.85)">We Make It Happen.</strong>',
+        'hero.explore': 'Explorar servicios →',
+        'hero.stat1': 'Agentes globales',
+        'hero.stat2': 'Países activos',
+        'hero.stat3': 'Puertos conectados',
+        'about.label': 'Quiénes somos',
+        'about.title': 'Una empresa global con raíces en Latinoamérica',
+        'about.p1': 'Somos una empresa de soluciones logísticas con base en Buenos Aires, Argentina, y headquarters en Ciudad de México. Parte del Proud Shipping Group, una compañía en crecimiento y expansión constante a nivel mundial.',
+        'about.p2': 'Nuestro servicio logístico integral gestiona eficientemente todos los procesos de operatividad y comercialidad en materia de exportación e importación, adaptándonos a las necesidades de cada cliente. Nos especializamos en logística estratégica y carga multimodal, además de flete aéreo, marítimo y terrestre.',
+        'about.goal1t': 'Optimizar recursos', 'about.goal1s': 'Eficiencia en cada operación',
+        'about.goal2t': 'Reducir costos', 'about.goal2s': 'Soluciones competitivas',
+        'about.goal3t': 'Respuesta rápida', 'about.goal3s': 'Atención en menos de 2hs',
+        'about.goal4t': 'Superar expectativas', 'about.goal4s': 'Nuestro compromiso real',
+        'mvv.label': 'Nuestros pilares', 'mvv.title': 'Misión, Visión y Valores',
+        'mvv.m.title': 'Misión', 'mvv.m.text': 'Brindar soluciones logísticas integrales, eficientes y personalizadas que conecten a nuestros clientes con el mundo, optimizando tiempos, recursos y costos operativos sin comprometer la calidad del servicio.',
+        'mvv.v.title': 'Visión', 'mvv.v.text': 'Ser un operador logístico global de referencia en Latinoamérica, reconocido por nuestra confiabilidad, tecnología aplicada y la excelencia en el servicio al cliente a nivel internacional.',
+        'mvv.val.title': 'Valores', 'mvv.val.1': 'Compromiso con cada operación', 'mvv.val.2': 'Integridad en cada decisión', 'mvv.val.3': 'Innovación constante', 'mvv.val.4': 'Enfoque total en el cliente',
+        'svc.label': 'Lo que ofrecemos', 'svc.title': 'Soluciones logísticas completas', 'svc.sub': 'Cubrimos cada modalidad de transporte con procesos optimizados y seguimiento end-to-end para tu carga.',
+        'sea.li1': 'FCL – Contenedor completo', 'sea.li2': 'LCL – Carga consolidada',
+        'air.li1': 'Urgente y Premium', 'air.li2': 'Temperatura controlada',
+        'inland.li1': 'FTL – Camión completo', 'inland.li2': 'LTL – Carga parcial', 'inland.li3': 'Refrigerado', 'inland.li4': 'ADR – Mercancías peligrosas',
+        'multi.li1': 'Puerta a puerta', 'multi.li2': 'Optimización de rutas', 'multi.li3': 'Grandes volúmenes', 'multi.li4': 'Coordinación integral',
+        'cta.detail': 'Ver detalle →',
+        'seafreight.desc': 'El transporte marítimo es una de las formas más económicas de trasladar mercaderías a grandes distancias. Gestionamos tanto flete de importación como de exportación, con una red de armadores consolidada y relaciones VIP con las principales líneas navieras del mundo.',
+        'seafreight.f1t': 'Capacidad total', 'seafreight.f1s': 'Grandes volúmenes sin límite de escala',
+        'seafreight.f2t': 'Salidas semanales', 'seafreight.f2s': 'Servicios regulares 24/7 desde/hacia principales hubs',
+        'seafreight.f3s': 'Control de temperatura para carga perecedera y pharma',
+        'seafreight.f4s': 'Manejo certificado de mercancías peligrosas',
+        'seafreight.cta': 'Solicitar cotización marítima →',
+        'seafreight.t1': 'Contenedor completo para tu carga. Mayor seguridad y tiempos de tránsito predecibles.',
+        'seafreight.t2': 'Consolidamos tu carga con otras, reduciendo costos sin sacrificar tiempos.',
+        'seafreight.t3': 'Para carga sobredimensionada, maquinaria pesada y vehículos rodantes.',
+        'seafreight.t4': 'Gestión integral de proyectos especiales con equipos dedicados e ingeniería de ruta.',
+        'seafreight.b1': 'Tarifa óptima por tonelada', 'seafreight.b2t': 'Seguridad', 'seafreight.b2s': 'Sistemas avanzados en cada buque', 'seafreight.b3t': 'Confiabilidad', 'seafreight.b3s': 'Fechas de salida y llegada predecibles',
+        'airfreight.desc': 'Coordinamos envíos de importación, exportación y crosstrade. Nuestro equipo especializado garantiza rapidez, trazabilidad y el cumplimiento de normativas internacionales para cualquier tipo de carga aérea.',
+        'airfreight.f1t': 'Entregas urgentes', 'airfreight.f1s': 'Vuelos programados con horarios precisos',
+        'airfreight.f2t': 'Temperatura controlada', 'airfreight.f2s': 'Cold chain para pharma y perecederos',
+        'airfreight.f3s': 'Aeronaves exclusivas para cargas especiales',
+        'airfreight.f4t': 'Reporting y trazabilidad', 'airfreight.f4s': 'Tracking en tiempo real y distribución con informes',
+        'airfreight.cta': 'Solicitar cotización aérea →',
+        'airfreight.t1h': 'General Cargo', 'airfreight.t1p': 'Mercancía estándar gestionada con eficiencia y puntualidad.',
+        'airfreight.t2h': 'Temperatura Controlada', 'airfreight.t2p': 'Cadena de frío certificada para farmacéuticos y alimentos perecederos.',
+        'airfreight.t3p': 'Transporte de mercancías peligrosas bajo normativa IATA DGR.',
+        'airfreight.t4p': 'Carga sobredimensionada o exclusiva con equipos especializados.',
+        'airfreight.b1t': 'Velocidad', 'airfreight.b1s': 'Tránsitos internacionales en 24–72hs',
+        'airfreight.b2t': 'Flexibilidad', 'airfreight.b2s': 'Alcanzamos cualquier punto del mundo',
+        'airfreight.b3t': 'Menor riesgo de daños', 'airfreight.b3s': 'Manipulación especializada en origen y destino',
+        'inlandfreight.desc': 'El transporte terrestre internacional entre dos o más países es una herramienta esencial para el comercio global. Trabajamos con una red de transportistas que ofrecen beneficios en costo y disponibilidad, con agentes en puntos clave de cada país para control total de la carga en cada etapa.',
+        'inlandfreight.f1t': 'Seguridad total', 'inlandfreight.f1s': 'GPS, monitoreo 24/7 y protocolos ADR certificados',
+        'inlandfreight.f2t': 'Cobertura regional', 'inlandfreight.f3t': 'Puntualidad', 'inlandfreight.f3s': 'KPIs de cumplimiento superiores al 97%',
+        'inlandfreight.f4t': 'Flexibilidad operativa', 'inlandfreight.f4s': 'Rutas y frecuencias adaptadas a tu operación',
+        'inlandfreight.cta': 'Solicitar cotización terrestre →',
+        'inlandfreight.t1h': 'FTL – Carga Completa', 'inlandfreight.t1p': 'Exclusividad total del vehículo para mayor seguridad y rapidez en destino.',
+        'inlandfreight.t2h': 'LTL – Carga Consolidada', 'inlandfreight.t2p': 'Optimizá costos compartiendo espacio con otras cargas sin perder control.',
+        'inlandfreight.t3h': 'Refrigerada', 'inlandfreight.t3p': 'Control de temperatura certificado para alimentos, cosméticos y farmacéuticos.',
+        'inlandfreight.t4h': 'ADR – Peligrosa', 'inlandfreight.t4p': 'Transporte de mercancías peligrosas con personal certificado y máxima normativa.',
+        'inlandfreight.b1s': 'Red optimizada para tarifas competitivas', 'inlandfreight.b2s': 'Pickup y entrega en cualquier punto de la región', 'inlandfreight.b3s': 'Servicio urgente disponible según disponibilidad',
+        'multimodal.desc': 'Esta modalidad nos permite tener otros puertos de salida combinando dos o más medios de transporte. Contamos con salidas vía el Pacífico desde San Antonio o Valparaíso, así como vía Antofagasta o Puerto Coronel, al Norte y Sur respectivamente. También es posible transitar por Argentina desde cualquier país limítrofe por vía terrestre, partiendo del puerto de Buenos Aires por mar.',
+        'multimodal.f1t': 'Coordinación integral', 'multimodal.f1s': 'Un solo interlocutor para toda la cadena logística',
+        'multimodal.f2t': 'Optimización de rutas', 'multimodal.f2s': 'Ingeniería de rutas para el mejor costo/tiempo',
+        'multimodal.f3t': 'Grandes volúmenes', 'multimodal.f3s': 'Capacidad para project cargo y cargas especiales',
+        'multimodal.f4t': 'Acceso a más puertos', 'multimodal.f4s': 'Pacífico, Atlántico y conexiones interiores',
+        'multimodal.cta': 'Solicitar solución multimodal →',
+        'multimodal.routes.title': 'Salidas desde Sudamérica',
+        'multimodal.t1h': 'Mar + Tierra', 'multimodal.t1p': 'Combinación marítima y terrestre para llegar a destinos sin salida al mar.',
+        'multimodal.t2h': 'Aire + Tierra', 'multimodal.t2p': 'Velocidad aérea con distribución terrestre en última milla.',
+        'multimodal.t3h': 'Puerta a Puerta', 'multimodal.t3p': 'Gestión integral de pickup a entrega final sin intermediarios.',
+        'multimodal.t4h': 'Grandes Volúmenes', 'multimodal.t4p': 'Soluciones a escala para operaciones de alto volumen y project cargo.',
+        'warehouse.title': 'Almacenaje Fiscal & Servicios Logísticos',
+        'warehouse.desc': 'Garantizamos la trazabilidad de tu carga para que llegue a destino en perfectas condiciones. Ofrecemos servicios de almacenaje fiscal, transporte doméstico, seguros de carga y gestión de inventarios con control digital y videomonitoreo.',
+        'warehouse.f1t': 'Almacén Fiscal', 'warehouse.f1s': 'Import/Export, desconsolidación, palletizado y control digital',
+        'warehouse.f2t': 'Transporte Doméstico', 'warehouse.f2s': 'Door to door, tracking online, facturación electrónica',
+        'warehouse.f3t': 'Seguros de Carga', 'warehouse.f3s': 'Trabajamos con las mejores aseguradoras del mercado',
+        'warehouse.f4t': 'Almacén Doméstico', 'warehouse.f4s': 'Optimización de costos de manejo y acondicionamiento COMEX',
+        'warehouse.t1p': 'Cold chain y trazabilidad completa para productos regulados.',
+        'warehouse.t2p': 'Manejo especializado de insumos y equipos para la industria energética.',
+        'warehouse.t3p': 'Gestión de perecederos con cadena de frío certificada.',
+        'warehouse.t4p': 'Autos, motos y repuestos para industria naval y automotriz.',
+        'coverage.label': 'Alcance internacional', 'coverage.title': 'Cobertura verdaderamente global',
+        'coverage.sub': 'Red de agentes y alianzas estratégicas en los principales hubs logísticos del mundo.',
+        'coverage.stat2': 'Países operativos',
+        'diff.label': 'Por qué elegirnos', 'diff.title': 'Nuestros diferenciales', 'diff.sub': 'Lo que distingue a Proud Shipping Group de cualquier otro operador del mercado.',
+        'diff.c1t': 'Atención personalizada', 'diff.c1p': 'Un ejecutivo dedicado a tu cuenta, disponible para responder en menos de 2 horas hábiles en cualquier operación activa.',
+        'diff.c2t': 'Seguimiento en tiempo real', 'diff.c2p': 'Trazabilidad completa de tu carga con actualizaciones proactivas en cada hito del proceso logístico.',
+        'diff.c3t': 'Red global consolidada', 'diff.c3p': 'Más de 120 agentes en todos los continentes garantizan operaciones fluidas sin importar el destino.',
+        'diff.c4t': 'Optimización de costos', 'diff.c4p': 'Analizamos cada ruta y modalidad para encontrar la opción más eficiente sin sacrificar tiempos ni seguridad.',
+        'diff.c5t': 'Experiencia internacional', 'diff.c5p': 'Más de 15 años operando en mercados complejos nos dan el know-how para resolver cualquier desafío logístico.',
+        'diff.c6t': 'Compromiso real', 'diff.c6p': 'Tu éxito es nuestro éxito. Construimos relaciones de largo plazo basadas en confianza y resultados concretos.',
+        'team.label': 'Nuestro equipo', 'team.title': '¿Quiénes somos?', 'team.sub': 'Profesionales con experiencia internacional y vocación de servicio para cada operación.',
+        'cta.final.p': 'Contactanos hoy y recibí una cotización personalizada en menos de 24 horas. Sin compromisos, con total transparencia. <strong style="color:rgba(255,255,255,.9)">We Make It Happen.</strong>',
+        'footer.brand': 'Operador logístico internacional con presencia global. <br/>Transport · Logistics · Supply Chain · Warehousing',
+        'footer.offices': 'Oficinas', 'footer.copy': '© 2025 Proud Shipping Group – AR. We Make It Happen. Todos los derechos reservados.',
+        'form.name': 'Nombre completo *', 'form.name.err': 'Por favor ingresá tu nombre.',
+        'form.email': 'Email corporativo *', 'form.email.err': 'Por favor ingresá un email válido.',
+        'form.company': 'Empresa', 'form.origin': 'Puerto / Ciudad de origen *', 'form.origin.err': 'Por favor indicá el origen.',
+        'form.service': 'Tipo de servicio *', 'form.service.ph': 'Seleccioná un servicio', 'form.service.err': 'Por favor seleccioná el tipo de servicio.',
+        'form.air.std': 'Air Freight – Estándar', 'form.air.urg': 'Air Freight – Urgente',
+        'form.inland.ref': 'Inland Freight – Refrigerado', 'form.inland.adr': 'Inland Freight – Peligroso (ADR)',
+        'form.multi': 'Transporte Multimodal', 'form.wh': 'Almacenaje Fiscal', 'form.other': 'Otro / Consulta general',
+        'form.msg': 'Mensaje adicional', 'form.submit': 'Enviar solicitud', 'form.sending': 'Enviando…'
+      },
+      en: {
+        'nav.home': 'Home',
+        'nav.about': 'About Us',
+        'nav.services': 'Services',
+        'nav.coverage': 'Coverage',
+        'nav.team': 'Team',
+        'nav.cta': 'Request a Quote',
+        'hero.eyebrow': 'Active operations in 50+ countries',
+        'hero.sub': 'We connect your cargo with the world with efficiency, reliability and a team dedicated to every operation. <strong style="color:rgba(255,255,255,.85)">We Make It Happen.</strong>',
+        'hero.explore': 'Explore services →',
+        'hero.stat1': 'Global agents',
+        'hero.stat2': 'Active countries',
+        'hero.stat3': 'Connected ports',
+        'about.label': 'Who we are',
+        'about.title': 'A global company with roots in Latin America',
+        'about.p1': 'We are a logistics solutions company based in Buenos Aires, Argentina, with headquarters in Mexico City. Part of the Proud Shipping Group, a company in constant growth and global expansion.',
+        'about.p2': 'Our comprehensive logistics service efficiently manages all operational and commercial processes for exports and imports, adapting to each client\'s needs. We specialize in strategic logistics and multimodal freight, as well as air, sea and land transportation.',
+        'about.goal1t': 'Optimize resources', 'about.goal1s': 'Efficiency in every operation',
+        'about.goal2t': 'Reduce costs', 'about.goal2s': 'Competitive solutions',
+        'about.goal3t': 'Fast response', 'about.goal3s': 'Response in under 2 hours',
+        'about.goal4t': 'Exceed expectations', 'about.goal4s': 'Our real commitment',
+        'mvv.label': 'Our pillars', 'mvv.title': 'Mission, Vision & Values',
+        'mvv.m.title': 'Mission', 'mvv.m.text': 'To provide comprehensive, efficient and personalized logistics solutions that connect our clients with the world, optimizing time, resources and operating costs without compromising service quality.',
+        'mvv.v.title': 'Vision', 'mvv.v.text': 'To be a reference global logistics operator in Latin America, recognized for our reliability, applied technology and excellence in international customer service.',
+        'mvv.val.title': 'Values', 'mvv.val.1': 'Commitment to every operation', 'mvv.val.2': 'Integrity in every decision', 'mvv.val.3': 'Constant innovation', 'mvv.val.4': 'Total client focus',
+        'svc.label': 'What we offer', 'svc.title': 'Complete logistics solutions', 'svc.sub': 'We cover every mode of transportation with optimized processes and end-to-end tracking for your cargo.',
+        'sea.li1': 'FCL – Full Container Load', 'sea.li2': 'LCL – Consolidated cargo',
+        'air.li1': 'Urgent & Premium', 'air.li2': 'Temperature controlled',
+        'inland.li1': 'FTL – Full Truck Load', 'inland.li2': 'LTL – Partial cargo', 'inland.li3': 'Refrigerated', 'inland.li4': 'ADR – Dangerous goods',
+        'multi.li1': 'Door to door', 'multi.li2': 'Route optimization', 'multi.li3': 'Large volumes', 'multi.li4': 'Comprehensive coordination',
+        'cta.detail': 'View details →',
+        'seafreight.desc': 'Sea freight is one of the most cost-effective ways to ship goods over long distances. We handle both import and export freight, with a consolidated network of shipowners and VIP relationships with the world\'s leading shipping lines.',
+        'seafreight.f1t': 'Full capacity', 'seafreight.f1s': 'Large volumes with no scale limit',
+        'seafreight.f2t': 'Weekly departures', 'seafreight.f2s': 'Regular 24/7 services to/from major hubs',
+        'seafreight.f3s': 'Temperature control for perishable cargo and pharma',
+        'seafreight.f4s': 'Certified handling of dangerous goods',
+        'seafreight.cta': 'Request sea freight quote →',
+        'seafreight.t1': 'Full container for your cargo. Greater security and predictable transit times.',
+        'seafreight.t2': 'We consolidate your cargo with others, reducing costs without sacrificing schedules.',
+        'seafreight.t3': 'For oversized cargo, heavy machinery and rolling vehicles.',
+        'seafreight.t4': 'Comprehensive management of special projects with dedicated teams and route engineering.',
+        'seafreight.b1': 'Optimal rate per ton', 'seafreight.b2t': 'Security', 'seafreight.b2s': 'Advanced systems on every vessel', 'seafreight.b3t': 'Reliability', 'seafreight.b3s': 'Predictable departure and arrival dates',
+        'airfreight.desc': 'We coordinate import, export and crosstrade shipments. Our specialized team guarantees speed, traceability and compliance with international regulations for any type of air cargo.',
+        'airfreight.f1t': 'Urgent deliveries', 'airfreight.f1s': 'Scheduled flights with precise timetables',
+        'airfreight.f2t': 'Temperature controlled', 'airfreight.f2s': 'Cold chain for pharma and perishables',
+        'airfreight.f3s': 'Exclusive aircraft for special cargo',
+        'airfreight.f4t': 'Reporting & traceability', 'airfreight.f4s': 'Real-time tracking and distribution with reports',
+        'airfreight.cta': 'Request air freight quote →',
+        'airfreight.t1h': 'General Cargo', 'airfreight.t1p': 'Standard merchandise managed with efficiency and punctuality.',
+        'airfreight.t2h': 'Temperature Controlled', 'airfreight.t2p': 'Certified cold chain for pharmaceuticals and perishable food.',
+        'airfreight.t3p': 'Dangerous goods transport under IATA DGR regulations.',
+        'airfreight.t4p': 'Oversized or exclusive cargo with specialized equipment.',
+        'airfreight.b1t': 'Speed', 'airfreight.b1s': 'International transits in 24–72h',
+        'airfreight.b2t': 'Flexibility', 'airfreight.b2s': 'We reach any point in the world',
+        'airfreight.b3t': 'Lower risk of damage', 'airfreight.b3s': 'Specialized handling at origin and destination',
+        'inlandfreight.desc': 'International land transportation between two or more countries is an essential tool for global trade. We work with a carrier network offering cost and availability benefits, with agents at key points in each country for full cargo control at every stage.',
+        'inlandfreight.f1t': 'Full security', 'inlandfreight.f1s': 'GPS, 24/7 monitoring and certified ADR protocols',
+        'inlandfreight.f2t': 'Regional coverage', 'inlandfreight.f3t': 'On-time delivery', 'inlandfreight.f3s': 'Compliance KPIs above 97%',
+        'inlandfreight.f4t': 'Operational flexibility', 'inlandfreight.f4s': 'Routes and frequencies tailored to your operation',
+        'inlandfreight.cta': 'Request inland freight quote →',
+        'inlandfreight.t1h': 'FTL – Full Truck Load', 'inlandfreight.t1p': 'Full vehicle exclusivity for greater security and speed to destination.',
+        'inlandfreight.t2h': 'LTL – Consolidated Load', 'inlandfreight.t2p': 'Optimize costs by sharing space with other cargo without losing control.',
+        'inlandfreight.t3h': 'Refrigerated', 'inlandfreight.t3p': 'Certified temperature control for food, cosmetics and pharmaceuticals.',
+        'inlandfreight.t4h': 'ADR – Dangerous', 'inlandfreight.t4p': 'Dangerous goods transport with certified personnel and top-level compliance.',
+        'inlandfreight.b1s': 'Optimized network for competitive rates', 'inlandfreight.b2s': 'Pickup and delivery at any point in the region', 'inlandfreight.b3s': 'Urgent service available subject to availability',
+        'multimodal.desc': 'This mode allows us to access additional departure ports by combining two or more means of transport. We offer Pacific departures from San Antonio or Valparaíso, as well as via Antofagasta or Puerto Coronel to the north and south respectively. We can also transit through Argentina from any bordering country by land, departing from the port of Buenos Aires by sea.',
+        'multimodal.f1t': 'Comprehensive coordination', 'multimodal.f1s': 'A single point of contact for the entire logistics chain',
+        'multimodal.f2t': 'Route optimization', 'multimodal.f2s': 'Route engineering for the best cost/time ratio',
+        'multimodal.f3t': 'Large volumes', 'multimodal.f3s': 'Capacity for project cargo and special loads',
+        'multimodal.f4t': 'Access to more ports', 'multimodal.f4s': 'Pacific, Atlantic and inland connections',
+        'multimodal.cta': 'Request multimodal solution →',
+        'multimodal.routes.title': 'Departures from South America',
+        'multimodal.t1h': 'Sea + Land', 'multimodal.t1p': 'Maritime and land combination to reach landlocked destinations.',
+        'multimodal.t2h': 'Air + Land', 'multimodal.t2p': 'Air speed with last-mile land distribution.',
+        'multimodal.t3h': 'Door to Door', 'multimodal.t3p': 'Full management from pickup to final delivery with no intermediaries.',
+        'multimodal.t4h': 'Large Volumes', 'multimodal.t4p': 'Scalable solutions for high-volume operations and project cargo.',
+        'warehouse.title': 'Fiscal Warehousing & Logistics Services',
+        'warehouse.desc': 'We guarantee the traceability of your cargo so it arrives at its destination in perfect condition. We offer fiscal warehousing, domestic transport, cargo insurance and inventory management with digital control and video monitoring.',
+        'warehouse.f1t': 'Fiscal Warehouse', 'warehouse.f1s': 'Import/Export, deconsolidation, palletizing and digital control',
+        'warehouse.f2t': 'Domestic Transport', 'warehouse.f2s': 'Door to door, online tracking, electronic invoicing',
+        'warehouse.f3t': 'Cargo Insurance', 'warehouse.f3s': 'We work with the best insurers on the market',
+        'warehouse.f4t': 'Domestic Warehouse', 'warehouse.f4s': 'Handling cost optimization and COMEX conditioning',
+        'warehouse.t1p': 'Complete cold chain and traceability for regulated products.',
+        'warehouse.t2p': 'Specialized handling of inputs and equipment for the energy industry.',
+        'warehouse.t3p': 'Perishables management with certified cold chain.',
+        'warehouse.t4p': 'Cars, motorcycles and spare parts for naval and automotive industries.',
+        'coverage.label': 'International reach', 'coverage.title': 'Truly global coverage',
+        'coverage.sub': 'Network of agents and strategic alliances at the world\'s major logistics hubs.',
+        'coverage.stat2': 'Operating countries',
+        'diff.label': 'Why choose us', 'diff.title': 'Our differentials', 'diff.sub': 'What sets Proud Shipping Group apart from any other operator on the market.',
+        'diff.c1t': 'Personalized attention', 'diff.c1p': 'A dedicated account executive available to respond within 2 business hours on any active operation.',
+        'diff.c2t': 'Real-time tracking', 'diff.c2p': 'Full cargo traceability with proactive updates at every milestone of the logistics process.',
+        'diff.c3t': 'Consolidated global network', 'diff.c3p': 'Over 120 agents across all continents ensure smooth operations regardless of the destination.',
+        'diff.c4t': 'Cost optimization', 'diff.c4p': 'We analyze every route and mode to find the most efficient option without sacrificing time or safety.',
+        'diff.c5t': 'International expertise', 'diff.c5p': 'Over 15 years operating in complex markets give us the know-how to solve any logistics challenge.',
+        'diff.c6t': 'Real commitment', 'diff.c6p': 'Your success is our success. We build long-term relationships based on trust and tangible results.',
+        'team.label': 'Our team', 'team.title': 'Meet the team', 'team.sub': 'International professionals with a true vocation for service on every operation.',
+        'cta.final.p': 'Contact us today and receive a personalized quote within 24 hours. No commitments, full transparency. <strong style="color:rgba(255,255,255,.9)">We Make It Happen.</strong>',
+        'footer.brand': 'International logistics operator with global presence. <br/>Transport · Logistics · Supply Chain · Warehousing',
+        'footer.offices': 'Offices', 'footer.copy': '© 2025 Proud Shipping Group – AR. We Make It Happen. All rights reserved.',
+        'form.name': 'Full name *', 'form.name.err': 'Please enter your name.',
+        'form.email': 'Corporate email *', 'form.email.err': 'Please enter a valid email.',
+        'form.company': 'Company', 'form.origin': 'Port / City of origin *', 'form.origin.err': 'Please indicate the origin.',
+        'form.service': 'Service type *', 'form.service.ph': 'Select a service', 'form.service.err': 'Please select the service type.',
+        'form.air.std': 'Air Freight – Standard', 'form.air.urg': 'Air Freight – Urgent',
+        'form.inland.ref': 'Inland Freight – Refrigerated', 'form.inland.adr': 'Inland Freight – Dangerous (ADR)',
+        'form.multi': 'Multimodal Transport', 'form.wh': 'Fiscal Warehousing', 'form.other': 'Other / General inquiry',
+        'form.msg': 'Additional message', 'form.submit': 'Send request', 'form.sending': 'Sending…'
+      }
+    };
+
+    function applyLang(lang) {
+      var dict = translations[lang];
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        if (dict[key] !== undefined) {
+          el.innerHTML = dict[key];
+        }
+      });
+      document.documentElement.lang = lang;
+      currentLang = lang;
+      var flag = document.getElementById('langFlag');
+      var label = document.getElementById('langLabel');
+      if (lang === 'es') {
+        
+        label.textContent = 'EN';
+        document.getElementById('langBtn').title = 'Switch to English';
+      } else {
+        
+        label.textContent = 'ES';
+        document.getElementById('langBtn').title = 'Cambiar a Español';
+      }
+    }
+
+    document.getElementById('langBtn').addEventListener('click', function() {
+      applyLang(currentLang === 'es' ? 'en' : 'es');
+    });
 
     /* ================================================================
        HTTPS REDIRECT (runs only in production context)
