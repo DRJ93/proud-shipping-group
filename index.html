@@ -21,12 +21,11 @@
   <meta http-equiv="X-Frame-Options" content="DENY" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Proud Shipping Group – Global Logistics" />
+  <meta property="og:title" content="Proud Shipping SA – Global Logistics" />
   <meta property="og:description"
     content="Soluciones logísticas internacionales. Marítimo, Aéreo, Terrestre y Multimodal." />
   <meta property="og:type" content="website" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://use.typekit.net/ssh0mqm.css">
 
   <!-- EmailJS -->
@@ -312,7 +311,8 @@ font-style: normal;
       cursor: pointer;
       padding: 8px;
       background: none;
-      border: none
+      border: none;
+      
     }
 
     .nav__burger span {
@@ -500,7 +500,7 @@ font-style: normal;
     }
 
     .hero__title {
-      font-size: clamp(2.4rem, 6vw, 4.4rem);
+      font-size: clamp(2rem, 4vw, 4.4rem);
       font-weight: 900;
       color: var(--white);
       line-height: 1.05;
@@ -1663,6 +1663,15 @@ font-style: normal;
    RESPONSIVE
    ================================================================ */
     @media(max-width:1100px) {
+       .nav__links,
+      .nav__cta {
+        display: none
+      }
+
+      .nav__burger {
+        display: flex
+      }
+
       .services__grid {
         grid-template-columns: repeat(2, 1fr)
       }
@@ -1678,7 +1687,9 @@ font-style: normal;
     }
 
     @media(max-width:900px) {
-
+      .nav__logo-text {
+        display: none;
+      }
       .about__wrap,
       .svc-detail__wrap,
       .multimodal-map__inner {
@@ -1714,17 +1725,9 @@ font-style: normal;
       }
     }
 
-    @media(max-width:768px) {
+    @media(max-width:780px) {
 
-      .nav__links,
-      .nav__cta {
-        display: none
-      }
-
-      .nav__burger {
-        display: flex
-      }
-
+      
       .services__grid {
         grid-template-columns: 1fr
       }
@@ -1829,13 +1832,13 @@ font-style: normal;
         <a href="#equipo" class="nav__link" role="menuitem" data-i18n="nav.team">Equipo</a>
       </div>
       <a href="#contacto" class="btn btn-primary nav__cta" data-i18n="nav.cta">Solicitar cotización</a>
+      
+      <button class="lang-btn" id="langBtn" aria-label="Cambiar idioma" title="Switch language">
+        <span id="langLabel">EN</span>
+      </button>
       <button class="nav__burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false"
         aria-controls="mobileNav">
         <span></span><span></span><span></span>
-      </button>
-      <button class="lang-btn" id="langBtn" aria-label="Cambiar idioma" title="Switch language">
-        
-        <span id="langLabel">EN</span>
       </button>
     </div>
     <div class="nav__mobile" id="mobileNav" role="menu" aria-hidden="true">
@@ -1872,10 +1875,10 @@ font-style: normal;
     <div class="hero__bg" role="img" aria-label="Vista aérea de puerto con contenedores"></div>
     <div class="container">
       <div class="hero__content">
-        <div style="display:flex; flex-direction: row; align-items: center; justify-content: center; padding-bottom: 20px">
-            <img src="/src/logo-proud-shipping-group.png" width="100" height="100" viewBox="0 0 24 24" fill="none"
+        <div style="display:flex; flex-direction: row; align-items: center; justify-content: start; padding-bottom: 20px">
+            <img src="/src/logo-proud-shipping-group.png"  viewBox="0 0 24 24" fill="none"
               stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" display="inline" />
-               <div display="inline"><strong class="hero__title">Proud Shipping S.A</strong> <br> <span style="color:rgba(255,255,255,.85)">WE MAKE IT HAPPEN</span></div>
+               <div display="inline"><strong class="hero__title">Proud Shipping S.A</strong> </div>
           </div>
           <div class="hero__eyebrow">
             <span class="hero__dot" aria-hidden="true"></span>
